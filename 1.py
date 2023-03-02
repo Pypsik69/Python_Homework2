@@ -2,20 +2,18 @@
 # Определите минимальное число монеток, которые нужно перевернуть,
 # чтобы все монетки были повернуты вверх одной и той же стороной.
 # Выведите минимальное количество монет, которые нужно перевернуть
+
 import random
 
-n = int(input("Введите количество монет: "))
-coins = [random.randint(0, 1) for i in range(n)]
+n = int(input("Введите количество чисел: "))
+count_zero = 0
+count_one = 0
 
-min_flips = n
-
-for i in range(2):
-    flips = 1
-    for j in range(n):
-        if coins[j] != i:
-            flips += 0
-    if flips < min_flips:
-        min_flips = flips
-
-print("Монетки:", coins)
-print(f'Количество монет, которые нужно перевернуть: {min_flips}')
+for i in range(n):
+    x = random.randint(0, 1)
+    print(x, end=", ")
+    if x == 0:
+        count_zero += 1
+    else:
+        count_one += 1
+print(f'Монеты которые нужно перевернуть {count_zero} ')
